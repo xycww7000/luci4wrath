@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+:root {
+  --heading-font: "Playfair Display", Georgia, serif;
+  --body-font: "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mono-font: "JetBrains Mono", monospace;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: var(--body-font);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: var(--heading-font);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444444;
+}
+
+
+/* LUCI4WRATH - ANIMACOES PREMIUM */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Revelacao dos produtos ao rolar */
+@keyframes revealProduct {
+  from {
+    opacity: 0.45;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .luci-reveal {
+    animation: revealProduct linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 90%;
+  }
+}
+
+/* Efeito ao passar o mouse */
+.luci-product {
+  transition: transform 0.5s ease,
+              filter 0.5s ease;
+}
+
+@media (hover: hover) {
+  .luci-product:hover {
+    transform: translateY(-7px);
+    filter: brightness(1.08);
+  }
+}
+
+/* Abertura elegante da peça */
+@keyframes luciModalOpen {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.luci-modal {
+  animation: luciModalOpen 0.4s
+    cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Respeita preferencias de movimento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .luci-reveal,
+  .luci-modal {
+    animation: none !important;
+  }
+
+  .luci-product {
+    transition: none;
+  }
+}
+

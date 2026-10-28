@@ -52,9 +52,9 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Main Header Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 md:h-24">
+        <div className="grid grid-cols-[44px_minmax(0,1fr)_88px] md:flex md:items-center md:justify-between items-center h-16 sm:h-20 md:h-24 min-w-0 w-full">
           {/* Left: Search button (desktop) / Menu toggle (mobile) */}
-          <div className="flex items-center gap-3 w-1/4">
+          <div className="flex items-center gap-1 min-w-0 md:w-1/4">
             <button
               onClick={onOpenMenu}
               className="p-2 -ml-2 text-white/90 hover:text-white md:hidden focus:outline-none transition-colors"
@@ -76,16 +76,18 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           {/* Center: Brand Logo */}
-          <div className="flex items-center justify-center flex-1 text-center">
+          <div className="flex items-center justify-center min-w-0 w-full md:w-auto md:flex-1 text-center">
             <button
               onClick={() => {
                 setActiveView('home');
                 onSelectCategory('all');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
               }}
-              className="focus:outline-none py-1"
+              className="focus:outline-none py-1 min-w-0 max-w-full flex items-center justify-center"
             >
-              <Logo size="md" />
+              <div className="origin-center scale-[0.55] sm:scale-[0.75] md:scale-100 flex items-center justify-center">
+  <Logo size="md" />
+</div>
             </button>
           </div>
 

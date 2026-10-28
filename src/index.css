@@ -109,3 +109,23 @@ html {
   }
 }
 
+/* Ajustes para telas pequenas */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+/* Evita que elementos largos quebrem o layout */
+@media (max-width: 640px) {
+  .mobile-responsive-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}

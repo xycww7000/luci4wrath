@@ -41,7 +41,7 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="flex items-center justify-center gap-4 animate-pulse">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-red-700"></span>
           <span className="uppercase text-[11px] tracking-widest text-zinc-200">
-            DROP 01 // CIA4W ONLINE — PEÇAS LIMITADAS
+            DROP 01 // LUCI4WRATH ONLINE — PEÇAS LIMITADAS
           </span>
           <span className="hidden md:inline text-zinc-500">•</span>
           <span className="hidden md:inline uppercase text-[11px] tracking-widest text-zinc-400">
